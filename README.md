@@ -65,7 +65,7 @@ limitations under the License.
 ---
 
 ## About this fork
-Huggingface's transformers have flash attention 2 implemented. One of the features of flash attention is packed training. It is useful for training on sequences of varying lenghts, since one can put multiple shorter samples into one long sequence. Flash attentions packed training enables to train it with attention mask that will not enable cross-sequence attention.
+Huggingface's transformers have flash attention 2 implemented. One of the features of flash attention is packed training. It is useful for training on sequences of varying lenghts, since one can put multiple shorter samples into one long sequence. Flash attentions packed training enables training on such packed sequences with attention mask that will not enable cross-sample attention.
 
 However, that feature is not yet supported by many of the huggingface models implemented in this library. This fork creates a workarounds, for some models to make them use this feature. Usually this require only passing the `position_ids` to the attention mechanism.
 
