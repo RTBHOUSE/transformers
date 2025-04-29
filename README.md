@@ -62,6 +62,18 @@ limitations under the License.
     <a href="https://hf.co/course"><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/course_banner.png"></a>
 </h3>
 
+---
+
+## About this fork
+Huggingface's transformers have flash attention 2 implemented. One of the features of flash attention is packed training. It is useful for training on sequences of varying lenghts, since one can put multiple shorter samples into one long sequence. Flash attentions packed training enables to train it with attention mask that will not enable cross-sequence attention.
+
+However, that feature is not yet supported by many of the huggingface models implemented in this library. This fork creates a workarounds, for some models to make them use this feature. Usually this require only passing the `position_ids` to the attention mechanism.
+
+### Models with added support for packed training:
+* GPT2
+
+
+---
 Transformers is a library of pretrained text, computer vision, audio, video, and multimodal models for inference and training. Use Transformers to fine-tune models on your data, build inference applications, and for generative AI use cases across multiple modalities.
 
 There are over 500K+ Transformers [model checkpoints](https://huggingface.co/models?library=transformers&sort=trending) on the [Hugging Face Hub](https://huggingface.com/models) you can use.
